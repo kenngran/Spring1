@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function (){
+            $("#inputC").change(function (){
+                const c = parseFloat($("#inputC").val());
+                if(!isNaN(c)){
+                    const f = (9/5)*c+32;
+                    $("#inputF").val(f);
+                } else { alert("Must input a number");}
+            });
+            $("#inputF").change(function (){
+                const f = parseFloat($("#inputF").val());
+                if(!isNaN(f)){
+                    const c = (5/9)*(f-32);
+                    $("#inputC").val(c);
+                } else { alert("Must input a number");}
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="inputC">C:</label><input type="number" id="inputC"><br><br>
+<label for="inputF">F:</label><input type="number" id="inputF">
+</body>
+</html>

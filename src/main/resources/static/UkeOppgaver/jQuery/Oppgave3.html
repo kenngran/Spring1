@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function (){
+            $("#butPluss").click(function (){
+                const num1 = parseFloat($("#inputNum1").val());
+                const num2 = parseFloat($("#inputNum2").val());
+                if(!isNaN(num1) && !isNaN(num2)){
+                    const result = num1 + num2;
+                    $("#pResult").text(result);
+                    console.log(result);
+                } else {
+                    alert("Both inputs must be numbers!");
+                }
+            });
+
+            $("#butMinus").click(function (){
+                const num1 = parseFloat($("#inputNum1").val());
+                const num2 = parseFloat($("#inputNum2").val());
+                if(!isNaN(num1) && !isNaN(num2)){
+                    const result = num1 - num2;
+                    $("#pResult").text(result);
+                } else {
+                    alert("Both inputs must be numbers!");
+                }
+            });
+
+            $("#butGange").click(function (){
+                const num1 = parseFloat($("#inputNum1").val());
+                const num2 = parseFloat($("#inputNum2").val());
+                if(!isNaN(num1) && !isNaN(num2)){
+                    const result = num1 * num2;
+                    $("#pResult").text(result);
+                } else {
+                    alert("Both inputs must be numbers!");
+                }
+            });
+
+            $("#butDele").click(function (){
+                const num1 = parseFloat($("#inputNum1").val());
+                const num2 = parseFloat($("#inputNum2").val());
+                if(!isNaN(num1) && !isNaN(num2)){
+                    if(num2==0){
+                        alert("Dele på null er bare tull");
+                    } else {
+                        const result = num1 / num2;
+                        $("#pResult").text(result);
+                    }
+                } else {
+                    alert("Both inputs must be numbers!");
+                }
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="number" id="inputNum1"><br><br>
+<button id="butPluss">+</button>
+<button id="butMinus">-</button>
+<button id="butGange">*</button>
+<button id="butDele">/</button> <br><br>
+<input type="number" id="inputNum2">
+<p id="pResult"></p>
+
+</body>
+</html>
